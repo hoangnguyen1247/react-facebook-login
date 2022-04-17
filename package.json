@@ -25,6 +25,7 @@
     },
     "author": "",
     "license": "ISC",
+    "private": false,
     "peerDependencies": {
         "react": "^17.0.2"
     },
