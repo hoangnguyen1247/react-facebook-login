@@ -1,0 +1,75 @@
+{
+    "name": "@hoangnguyen1247/react-facebook-login",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "source": "src/index.ts",
+    "exports": {
+        "import": "./dist/react-facebook-login.modern.js",
+        "require": "./dist/react-facebook-login.cjs",
+        "default": "./dist/react-facebook-login.modern.js"
+    },
+    "main": "./dist/react-facebook-login.cjs",
+    "module": "./dist/react-facebook-login.module.js",
+    "unpkg": "./dist/react-facebook-login.umd.js",
+    "types": "./dist/index.d.ts",
+    "esnext": "src/index.ts",
+    "scripts": {
+        "prepare": "husky install",
+        "prebuild": "rimraf dist",
+        "build": "microbundle --generateTypes true --jsx React.createElement --compress false",
+        "type-check": "tsc --noEmit",
+        "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+        "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+        "test": "jest --passWithNoTests"
+    },
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+        "react": "^17.0.2"
+    },
+    "devDependencies": {
+        "@commitlint/config-conventional": "^16.2.1",
+        "@semantic-release/github": "^8.0.4",
+        "@semantic-release/npm": "^9.0.1",
+        "@types/node": "^17.0.24",
+        "@types/react": "^18.0.5",
+        "@typescript-eslint/eslint-plugin": "^5.19.0",
+        "@typescript-eslint/parser": "^5.19.0",
+        "commitlint": "^16.2.3",
+        "eslint": "^8.13.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-react": "^7.29.4",
+        "husky": "^7.0.4",
+        "jest": "^27.5.1",
+        "lint-staged": "^12.3.8",
+        "microbundle": "^0.14.2",
+        "react": "^17.0.2",
+        "rimraf": "^3.0.2",
+        "semantic-release": "^19.0.2",
+        "ts-jest": "^27.1.4",
+        "typescript": "^4.6.3"
+    },
+    "lint-staged": {
+        "*.@(ts|tsx)": [
+            "eslint --cache"
+        ]
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "ts",
+            "tsx"
+        ],
+        "rootDir": "src",
+        "testRegex": ".*\\.spec\\.ts$",
+        "transform": {
+            "^.+\\.(t|j)s$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "**/*.(t|j)s"
+        ],
+        "coverageDirectory": "../coverage",
+        "testEnvironment": "node"
+    }
+}
